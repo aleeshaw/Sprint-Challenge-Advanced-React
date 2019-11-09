@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ThemeDropdown from './DropdownMenu';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useCandyMode } from '../hooks/useCandyMode';
+import './Nav.css';
+
 
 const Nav = () => {
 
@@ -16,27 +19,17 @@ const Nav = () => {
     setCandyMode(!candyMode);
   };
 
+  
+
   return(
     <nav className="nav">
       <h1> Women's World Cup Player Search Stats</h1>
 
-      <div className="theme-buttons">
-        <p>Themes</p>
-        <div
-          onClick={darkModeOn}
-          className={darkMode ? 'toggle toggled' : 'toggle'}
-        >
-          Dark
-        </div>
-
-        <div
-          className="form-button"
-          onClick={candyModeOn}
-          value="candy"
-        >
-          Candy
-        </div>   
-      </div>
+      <ThemeDropdown 
+        eventHandler1={darkModeOn}
+        eventHandler2={candyModeOn}
+      />
+      
     </nav>
   )
 };
