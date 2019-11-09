@@ -2,20 +2,27 @@ import React from 'react';
 
 const Nav = () => {
 
-  submitHanlder
+  const submitHandler = event => {
+    event.preventDefault();
+  }
+
+  const clickHandler = event => {
+    console.log(`${event.target.value} theme selected`)
+  }
 
   return(
     <nav className="nav">
       <h1> Women's World Cup Player Search Stats</h1>
 
       <div className="theme-switches">
-        <form>
+        <form onSubmit={submitHandler}>
           <label>
             <input
               type="radio"
               name="light"
               value="light"
               className="form-button"
+              onClick={clickHandler}
             />
             Light
           </label>
@@ -24,8 +31,9 @@ const Nav = () => {
             <input
               type="radio"
               name="light"
-              value="light"
+              value="dark"
               className="form-button"
+              onClick={clickHandler}
             />
             Dark
           </label>
@@ -34,8 +42,9 @@ const Nav = () => {
             <input
               type="radio"
               name="light"
-              value="light"
+              value="candy"
               className="form-button"
+              onClick={clickHandler}
             />
             Candy
           </label>
