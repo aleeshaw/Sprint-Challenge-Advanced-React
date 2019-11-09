@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import PlayerCard from './Components/PlayerCard';
+import Nav from './Components/Nav';
 
 class App extends React.Component {
   state = {
@@ -25,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Women's World Cup Player Search Stats</h1>
+        <Nav />
 
         <div className="player-info">
           {this.state.players.map(player => {
@@ -36,7 +37,7 @@ class App extends React.Component {
                 />
               </div>
             )
-          })};
+          })}
         </div>
       </div>
     );
