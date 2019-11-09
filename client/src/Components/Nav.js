@@ -9,12 +9,10 @@ const Nav = () => {
   const [candyMode, setCandyMode] = useCandyMode(false);
 
   const darkModeOn = event => {
-    console.log(`${event.target.value} theme selected`)
     setDarkMode(!darkMode);
   };
 
   const candyModeOn = event => {
-    console.log(`${event.target.value} theme selected`)
     setCandyMode(!candyMode);
   };
 
@@ -22,40 +20,22 @@ const Nav = () => {
     <nav className="nav">
       <h1> Women's World Cup Player Search Stats</h1>
 
-      <div className="theme-switches">
-        <form>
-          <label>
-            <input
-              type="radio"
-              name="light"
-              value="light"
-              // onClick={clickHandler}
-            />
-            Light
-          </label>
+      <div className="theme-buttons">
+        <p>Themes</p>
+        <div
+          onClick={darkModeOn}
+          className={darkMode ? 'toggle toggled' : 'toggle'}
+        >
+          Dark
+        </div>
 
-          <label>
-            <input
-              type="radio"
-              name="light"
-              value="dark"
-              onClick={darkModeOn}
-              className={darkMode ? 'toggle toggled' : 'toggle'}
-            />
-            Dark
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="light"
-              value="candy"
-              className="form-button"
-              onClick={candyModeOn}
-            />
-            Candy
-          </label>
-        </form>
+        <div
+          className="form-button"
+          onClick={candyModeOn}
+          value="candy"
+        >
+          Candy
+        </div>   
       </div>
     </nav>
   )

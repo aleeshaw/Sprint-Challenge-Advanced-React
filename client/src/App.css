@@ -35,10 +35,12 @@
 
 .candy-mode {
   background-color: #7CD5D9;
+  color: rgb(233, 59, 88)
 }
 
 .dark-mode {
   background-color: #282c34;
+  color: lightgray
 }
 
 .light-mode {
