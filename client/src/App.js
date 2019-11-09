@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import PlayerCard from './Components/PlayerCard';
+import PlayerTable from './Components/PlayerTable';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './Components/Nav';
+
 
 class App extends React.Component {
   state = {
@@ -27,19 +29,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Nav />
-
-        <div className="player-info">
-          {this.state.players.map(player => {
-            return (
-              <div key={player.name}>
-                <PlayerCard 
-                  player={player}
-                />
-              </div>
-            )
-          })}
-        </div>
-      </div>
+        <PlayerTable
+          players={this.state.players}
+        />        
+      </div> //main app div
     );
 
     }
