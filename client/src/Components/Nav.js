@@ -1,28 +1,35 @@
 import React from 'react';
+import { useDarkMode } from '../hooks/useDarkMode';
+import { useCandyMode } from '../hooks/useCandyMode';
 
 const Nav = () => {
 
-  const submitHandler = event => {
-    event.preventDefault();
-  }
+  const [darkMode, setDarkMode] = useDarkMode(false);
 
-  const clickHandler = event => {
+  const [candyMode, setCandyMode] = useCandyMode(false);
+
+  const darkModeOn = event => {
     console.log(`${event.target.value} theme selected`)
-  }
+    setDarkMode(!darkMode);
+  };
+
+  const candyModeOn = event => {
+    console.log(`${event.target.value} theme selected`)
+    setCandyMode(!candyMode);
+  };
 
   return(
     <nav className="nav">
       <h1> Women's World Cup Player Search Stats</h1>
 
       <div className="theme-switches">
-        <form onSubmit={submitHandler}>
+        <form>
           <label>
             <input
               type="radio"
               name="light"
               value="light"
-              className="form-button"
-              onClick={clickHandler}
+              // onClick={clickHandler}
             />
             Light
           </label>
@@ -32,8 +39,8 @@ const Nav = () => {
               type="radio"
               name="light"
               value="dark"
-              className="form-button"
-              onClick={clickHandler}
+              onClick={darkModeOn}
+              className={darkMode ? 'toggle toggled' : 'toggle'}
             />
             Dark
           </label>
@@ -44,14 +51,10 @@ const Nav = () => {
               name="light"
               value="candy"
               className="form-button"
-              onClick={clickHandler}
+              onClick={candyModeOn}
             />
             Candy
           </label>
-
-          <button type="submit">
-            Save
-          </button>
         </form>
       </div>
     </nav>

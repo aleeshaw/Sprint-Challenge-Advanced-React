@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -30,4 +31,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.candy-mode {
+  background-color: #7CD5D9;
+}
+
+.dark-mode {
+  background-color: #282c34;
+}
+
+.light-mode {
+  background-color: #ffff;
 }
