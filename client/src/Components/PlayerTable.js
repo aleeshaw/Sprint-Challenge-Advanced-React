@@ -8,7 +8,7 @@ const PlayerTable = props => {
   return(
     <div className="player-card">
       
-      <Table striped bordered hover>
+      <Table striped bordered>
         <thead>
           <tr>
             <th>Player Name</th>
