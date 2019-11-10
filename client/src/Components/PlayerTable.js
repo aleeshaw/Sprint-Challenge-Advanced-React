@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const PlayerTable = props => {
   
   const players = props.players;
+
   return(
     <div className="player-card">
       

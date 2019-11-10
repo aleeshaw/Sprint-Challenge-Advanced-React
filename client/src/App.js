@@ -15,7 +15,7 @@ class App extends React.Component {
     axios
       .get("http://localhost:5000/api/players")
       .then(res => {
-        console.log("api results", res.data)
+        //console.log("api results", res.data)
         this.setState({
           players: res.data
         })

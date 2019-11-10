@@ -40,9 +40,5 @@
 
 .dark-mode {
   background-color: #282c34;
-  color: lightgray
-}
-
-.light-mode {
-  background-color: #ffff;
+  color: #fff;
 }
