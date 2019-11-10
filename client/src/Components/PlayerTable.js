@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, thread, td, tbody } from 'reactstrap';
+import { Table } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PlayerTable = props => {
